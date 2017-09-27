@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+var version string
 var debugFlag *bool
 var processedWindows []string
 
@@ -14,7 +15,13 @@ func main() {
 	debugFlag = flag.Bool("debug", false, "Display debug information")
 	nameFlag := flag.String("name", "Mozilla Firefox", "Hide title bar for windows which title contains <name>")
 	periodFlag := flag.Int("period", 1000, "Check for new windows every <period> ms")
+	versionFlag := flag.Bool("version", false, "Print version information")
 	flag.Parse()
+
+	if *versionFlag {
+		fmt.Println(version)
+		return
+	}
 	if *debugFlag {
 		fmt.Printf("Name flag: %s\n", *nameFlag)
 	}
