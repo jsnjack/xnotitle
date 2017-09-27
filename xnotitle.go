@@ -8,6 +8,7 @@ import (
 )
 
 var debugFlag *bool
+var processedWindows []string
 
 func main() {
 	debugFlag = flag.Bool("debug", false, "Display debug information")
@@ -25,8 +26,13 @@ func main() {
 
 // CheckWindows checks if windows needs to be hidden
 func CheckWindows(windows []*Window, name *string) {
+	if *debugFlag {
+		fmt.Printf("Inspecting %d windows\n", len(windows))
+	}
+	var newList []string
 	for _, item := range windows {
-		if strings.Contains(item.Title, *name) {
+		newList = append(newList, item.ID)
+		if !in(&item.ID, &processedWindows) && strings.Contains(item.Title, *name) {
 			if *debugFlag {
 				fmt.Println("Hiding window titlebar:", item.ID, item.Title)
 			}
@@ -36,4 +42,15 @@ func CheckWindows(windows []*Window, name *string) {
 			}
 		}
 	}
+	processedWindows = newList
+}
+
+// Checks if windowID is in windowIDList
+func in(item *string, list *[]string) bool {
+	for _, value := range *list {
+		if *item == value {
+			return true
+		}
+	}
+	return false
 }

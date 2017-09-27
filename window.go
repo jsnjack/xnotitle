@@ -27,7 +27,7 @@ func GetWindows() []*Window {
 			splittedTitle := strings.SplitN(splitted[1], " ", 4)
 			windowList = append(windowList, &Window{ID: splitted[0], Title: splittedTitle[3]})
 		default:
-			if *debugFlag {
+			if *debugFlag && len(line) > 0 {
 				fmt.Println("Ignored", line)
 			}
 		}
