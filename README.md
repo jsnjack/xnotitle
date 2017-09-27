@@ -2,7 +2,7 @@ xnotitle
 ====
 
 ### What is it?
-xnotitle hides title bar for every window that matches specific pattern. It was developed as a replacement for [HTitle](https://addons.mozilla.org/en-US/firefox/addon/htitle/) Firefox addon as it is no longer works since Firefox 57
+xnotitle hides title bar for every maximized window that matches specific pattern. It was developed as a replacement for [HTitle](https://addons.mozilla.org/en-US/firefox/addon/htitle/) Firefox addon as it is no longer works since Firefox 57
 
 ### How to use?
 Start `xnotitle` to monitor and hide title bar of the windows.
