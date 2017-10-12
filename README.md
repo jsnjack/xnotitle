@@ -5,6 +5,13 @@ xnotitle
 xnotitle hides title bar for every maximized window that matches specific pattern. It was developed as a replacement for [HTitle](https://addons.mozilla.org/en-US/firefox/addon/htitle/) Firefox addon as it is no longer works since Firefox 57
 
 ### How to use?
+
+#### Dependencies
+xnotitle works in Gnome 3 and has the following dependency:
+```bash
+sudo dnf install wmctrl
+```
+
 Start `xnotitle` to monitor and hide title bar of the windows.
 ```
 Usage of ./xnotitle:
